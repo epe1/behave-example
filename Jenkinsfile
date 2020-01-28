@@ -4,7 +4,7 @@ pipeline {
         stage('Stage 1') {
             steps {
                 withPythonEnv('python3') {
-                    sh 'pip install requirements.txt'
+                    sh 'pip install -r requirements.txt'
                     sh 'behave -f json -o behave-ouput.json'
                     sh 'python -m behave2cucumber -i behave-output.json -o cucumber-report.json'
                 }
