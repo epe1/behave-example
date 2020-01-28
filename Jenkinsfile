@@ -6,7 +6,8 @@ pipeline {
                 withPythonEnv('python3') {
                     sh 'pip install -r requirements.txt'
                     sh 'behave -f json -o behave-ouput.json'
-                    sh 'python -m behave2cucumber -i behave-output.json -o cucumber-report.json'
+                    sh 'ls -la'
+                    sh 'python -m behave2cucumber -i behave-ouput.json -o cucumber-report.json'
                 }
             }
         }
